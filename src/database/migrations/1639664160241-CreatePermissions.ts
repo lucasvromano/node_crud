@@ -9,6 +9,7 @@ export class CreatePermissions1639664160241 implements MigrationInterface {
           {
             name: "id",
             type: "uuid",
+            isPrimary: true,
           },
           {
             name: "description",
