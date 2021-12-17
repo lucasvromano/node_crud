@@ -32,7 +32,7 @@ export class CreateUsers1639703379254 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: "fk_users_category",
+            name: "fk_users_permissions",
             columnNames: ["permission_id"],
             referencedTableName: "users",
             referencedColumnNames: ["id"],
