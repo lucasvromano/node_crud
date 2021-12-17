@@ -14,7 +14,6 @@ export class CreateUsers1639703379254 implements MigrationInterface {
           {
             name: "name",
             type: "varchar",
-            isUnique: true,
           },
           {
             name: "password",
@@ -32,9 +31,9 @@ export class CreateUsers1639703379254 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: "fk_users_permissions",
+            name: "fk_users_permission",
             columnNames: ["permission_id"],
-            referencedTableName: "users",
+            referencedTableName: "permissions",
             referencedColumnNames: ["id"],
           },
         ],
