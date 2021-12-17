@@ -1,14 +1,15 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class CreateEmployees1639664226349 implements MigrationInterface {
+export class CreateCustomers1639706584864 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "employees",
+        name: "customers",
         columns: [
           {
             name: "id",
             type: "uuid",
+            isPrimary: true,
           },
           {
             name: "first_name",
@@ -23,11 +24,7 @@ export class CreateEmployees1639664226349 implements MigrationInterface {
             type: "varchar",
           },
           {
-            name: "salary",
-            type: "numeric",
-          },
-          {
-            name: "working_hour_id",
+            name: "user_id",
             type: "uuid",
           },
           {
@@ -38,9 +35,9 @@ export class CreateEmployees1639664226349 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: "fk_employees_working_hour",
-            columnNames: ["working_hour_id"],
-            referencedTableName: "working_hours",
+            name: "fk_customers_user",
+            columnNames: ["user_id"],
+            referencedTableName: "users",
             referencedColumnNames: ["id"],
           },
         ],
@@ -49,6 +46,6 @@ export class CreateEmployees1639664226349 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("employees");
+    await queryRunner.dropTable("customers");
   }
 }

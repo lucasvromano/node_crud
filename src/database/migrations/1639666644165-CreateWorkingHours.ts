@@ -9,6 +9,7 @@ export class CreateWorkingHours1639666644165 implements MigrationInterface {
           {
             name: "id",
             type: "uuid",
+            isPrimary: true,
           },
           {
             name: "first_start_date",
