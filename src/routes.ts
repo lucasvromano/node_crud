@@ -1,3 +1,7 @@
+import { DeleteCustomerController } from "./controllers/DeleteCustomerController";
+import { UpdateCustomerController } from "./controllers/UpdateCustomerController";
+import { GetAllCustomersController } from "./controllers/GetAllCustomersController";
+import { CreateCustomerController } from "./controllers/CreateCustomerController";
 import { DeleteEmployeeController } from "./controllers/DeleteEmployeeController";
 import { UpdateEmployeeController } from "./controllers/UpdateEmployeeService";
 import { GetAllEmployeesController } from "./controllers/GetAllEmployeesController";
@@ -18,9 +22,10 @@ import { UpdateCategoryController } from "./controllers/UpdateCategoryController
 import { DeleteCategoryController } from "./controllers/DeleteCategoryController";
 import { GetAllCategoriesController } from "./controllers/GetAllCategoriesController";
 import { CreateCategoryController } from "./controllers/CreateCategoryController";
-import { Router } from "express";
 import { DeleteUserController } from "./controllers/DeleteUserController";
 import { DeleteWorkingHourController } from "./controllers/DeleteWorkingHourController";
+
+import { Router } from "express";
 
 const routes = Router();
 
@@ -57,5 +62,11 @@ routes.post("/employees", new CreateEmployeeController().handle);
 routes.get("/employees", new GetAllEmployeesController().handle);
 routes.put("/employees/:id", new UpdateEmployeeController().handle);
 routes.delete("/employees/:id", new DeleteEmployeeController().handle);
+
+// customers
+routes.post("/customers", new CreateCustomerController().handle);
+routes.get("/customers", new GetAllCustomersController().handle);
+routes.put("/customers/:id", new UpdateCustomerController().handle);
+routes.delete("/customers/:id", new DeleteCustomerController().handle);
 
 export { routes };
