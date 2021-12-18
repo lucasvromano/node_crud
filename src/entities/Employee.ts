@@ -1,3 +1,4 @@
+import { User } from "./User";
 import { WorkingHour } from "./WorkingHour";
 import {
   Entity,
@@ -21,9 +22,6 @@ export class Employee {
   last_name: string;
 
   @Column()
-  duration: string;
-
-  @Column()
   photo: string;
 
   @Column()
@@ -35,6 +33,13 @@ export class Employee {
   @ManyToOne(() => WorkingHour)
   @JoinColumn({ name: "working_hour_id" })
   working_hour: WorkingHour;
+
+  @Column()
+  user_id: string;
+
+  @ManyToOne(() => User)
+  @JoinColumn({ name: "user_id" })
+  user: User;
 
   @CreateDateColumn()
   created_at: Date;

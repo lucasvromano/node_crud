@@ -32,6 +32,10 @@ export class CreateEmployees1639706746428 implements MigrationInterface {
             type: "uuid",
           },
           {
+            name: "user_id",
+            type: "uuid",
+          },
+          {
             name: "created_at",
             type: "timestamp",
             default: "now()",
@@ -42,6 +46,12 @@ export class CreateEmployees1639706746428 implements MigrationInterface {
             name: "fk_employees_working_hour",
             columnNames: ["working_hour_id"],
             referencedTableName: "working_hours",
+            referencedColumnNames: ["id"],
+          },
+          {
+            name: "fk_employees_user",
+            columnNames: ["user_id"],
+            referencedTableName: "users",
             referencedColumnNames: ["id"],
           },
         ],
