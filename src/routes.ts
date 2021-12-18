@@ -1,3 +1,7 @@
+import { DeleteServiceController } from "./controllers/DeleteServiceController";
+import { UpdateServiceController } from "./controllers/UpdateServiceController";
+import { GetAllServicesController } from "./controllers/GetAllServicesController";
+import { CreateServiceController } from "./controllers/CreateServiceController";
 import { DeleteCustomerController } from "./controllers/DeleteCustomerController";
 import { UpdateCustomerController } from "./controllers/UpdateCustomerController";
 import { GetAllCustomersController } from "./controllers/GetAllCustomersController";
@@ -68,5 +72,11 @@ routes.post("/customers", new CreateCustomerController().handle);
 routes.get("/customers", new GetAllCustomersController().handle);
 routes.put("/customers/:id", new UpdateCustomerController().handle);
 routes.delete("/customers/:id", new DeleteCustomerController().handle);
+
+// services
+routes.post("/services", new CreateServiceController().handle);
+routes.get("/services", new GetAllServicesController().handle);
+routes.put("/services/:id", new UpdateServiceController().handle);
+routes.delete("/services/:id", new DeleteServiceController().handle);
 
 export { routes };

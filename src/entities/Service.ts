@@ -5,7 +5,6 @@ import {
   CreateDateColumn,
   PrimaryColumn,
   ManyToOne,
-  JoinColumn,
 } from "typeorm";
 import { v4 as uuid } from "uuid";
 
@@ -26,8 +25,8 @@ export class Service {
   @CreateDateColumn()
   created_at: Date;
 
-  @ManyToOne(type => Scheduling, scheduling => scheduling.services)
-  scheduling: Scheduling;
+  // @ManyToOne(type => Scheduling, scheduling => scheduling.services)
+  // scheduling: Scheduling;
 
   constructor() {
     if (!this.id) {
