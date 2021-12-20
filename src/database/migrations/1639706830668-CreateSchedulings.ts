@@ -47,7 +47,7 @@ export class CreateSchedulings1639706830668 implements MigrationInterface {
             referencedColumnNames: ["id"],
           },
           {
-            name: "fk_schedulings_scheduling",
+            name: "fk_schedulings_service",
             columnNames: ["service_id"],
             referencedTableName: "services",
             referencedColumnNames: ["id"],

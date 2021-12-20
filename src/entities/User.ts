@@ -3,8 +3,8 @@ import {
   Column,
   CreateDateColumn,
   PrimaryColumn,
-  ManyToOne,
   JoinColumn,
+  OneToOne,
 } from "typeorm";
 import { v4 as uuid } from "uuid";
 
@@ -24,7 +24,7 @@ export class User {
   @Column()
   permission_id: string;
 
-  @ManyToOne(() => Permission)
+  @OneToOne(() => Permission)
   @JoinColumn({ name: "permission_id" })
   permission: Permission;
 

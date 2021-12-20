@@ -1,4 +1,4 @@
-import { Scheduling } from './Scheduling';
+import { Scheduling } from "./Scheduling";
 import {
   Entity,
   Column,
@@ -22,11 +22,11 @@ export class Service {
   @Column()
   time: Date;
 
+  @ManyToOne(() => Scheduling, (scheduling) => scheduling.services)
+  scheduling: Scheduling;
+
   @CreateDateColumn()
   created_at: Date;
-
-  // @ManyToOne(type => Scheduling, scheduling => scheduling.services)
-  // scheduling: Scheduling;
 
   constructor() {
     if (!this.id) {

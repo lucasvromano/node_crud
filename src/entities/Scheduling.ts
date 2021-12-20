@@ -37,7 +37,7 @@ export class Scheduling {
   @Column()
   service_id: string;
 
-  @OneToMany(type => Service, service => service.scheduling)
+  @OneToMany(() => Service, service => service.scheduling)
   services: Service[];
 
   @CreateDateColumn()

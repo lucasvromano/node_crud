@@ -1,3 +1,4 @@
+import { GetAllSchedulingsController } from "./controllers/GetAllSchedulingsController";
 import { DeleteServiceController } from "./controllers/DeleteServiceController";
 import { UpdateServiceController } from "./controllers/UpdateServiceController";
 import { GetAllServicesController } from "./controllers/GetAllServicesController";
@@ -30,6 +31,7 @@ import { DeleteUserController } from "./controllers/DeleteUserController";
 import { DeleteWorkingHourController } from "./controllers/DeleteWorkingHourController";
 
 import { Router } from "express";
+import { CreateSchedulingController } from "./controllers/CreateSchedulingController";
 
 const routes = Router();
 
@@ -78,5 +80,9 @@ routes.post("/services", new CreateServiceController().handle);
 routes.get("/services", new GetAllServicesController().handle);
 routes.put("/services/:id", new UpdateServiceController().handle);
 routes.delete("/services/:id", new DeleteServiceController().handle);
+
+// scheduling
+routes.post("/schedulings", new CreateSchedulingController().handle);
+routes.get("/schedulings", new GetAllSchedulingsController().handle);
 
 export { routes };

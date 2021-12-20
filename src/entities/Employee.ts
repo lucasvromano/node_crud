@@ -7,6 +7,7 @@ import {
   PrimaryColumn,
   ManyToOne,
   JoinColumn,
+  OneToOne,
 } from "typeorm";
 import { v4 as uuid } from "uuid";
 
@@ -37,7 +38,7 @@ export class Employee {
   @Column()
   user_id: string;
 
-  @ManyToOne(() => User)
+  @OneToOne(() => User)
   @JoinColumn({ name: "user_id" })
   user: User;
 
